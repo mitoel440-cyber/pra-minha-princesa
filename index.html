@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pra Minha Princesa 💖</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }body {
+  background: linear-gradient(135deg, #ff9ecf, #ffd6ea);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+.container {
+  max-width: 420px;
+  width: 100%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.foto {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 15px 0;
+  border: 3px solid rgba(255,255,255,0.4);
+}
+
+.texto {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+button {
+  margin-top: 25px;
+  background: white;
+  color: #ff4f9a;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  color: white;
+  animation: cair linear forwards;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+@keyframes cair {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.contador {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.envelope {
+  position: relative;
+  width: 220px;
+  height: 150px;
+  margin: 0 auto 25px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.envelope:hover {
+  transform: scale(1.05);
+}
+
+.corpo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff6fae;
+  border-radius: 12px;
+  bottom: 0;
+  z-index: 1;
+}
+
+.tampa {
+  transition: transform 1s ease;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff8fc0;
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  transform-origin: top;
+  animation: flutuar 2s infinite ease-in-out;
+  z-index: 2;
+}
+
+.carta-preview {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: white;
+  left: 10%;
+  top: 10%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #ff4f9a;
+  z-index: 0;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(15deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+  </style>
+</head>
+<body>  <div class="container">
+    <div id="inicio">
+      <div class="envelope" onclick="abrirCarta()">
+        <div class="tampa"></div>
+        <div class="corpo"></div>
+        <div class="carta-preview">💌</div>
+      </div><h1>Uma coisinha pra você 💌</h1>
+  <p>Tem uma surpresa esperando sua princesa favorita...</p>
+</div>
+
+<div id="carta" class="hidden">
+  <h1>Pra Minha Princesa 💖</h1>
+
+  <img class="foto" id="fotoSlide" src="https://i.postimg.cc/XZLDSNSV/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg" alt="foto">
+
+  <div class="texto" id="textoDigitando"></div>
+
+  <div class="contador" id="contador"></div>
+
+  <button onclick="mostrarMensagem()">Clique aqui ✨</button>
+</div>
+
+  </div>  <script>
+    function abrirCarta() {
+      const tampa = document.querySelector('.tampa');
+      tampa.style.transform = 'rotateX(180deg)';
+
+      setTimeout(() => {
+        document.getElementById('inicio').classList.add('hidden');
+        document.getElementById('carta').classList.remove('hidden');
+        escreverTexto();
+      }, 900);
+    }
+
+    const mensagem = `Desde que você apareceu na minha vida,
+ tudo ficou mais bonito, mais leve e mais especial.
+ Seu sorriso consegue iluminar até os meus dias mais difíceis.
+
+ Você é aquele tipo de pessoa que dá vontade de cuidar,
+ abraçar e ter por perto o tempo todo.
+
+ Só queria que você soubesse que é muito importante pra mim. 💕`;
+
+    function escreverTexto() {
+      let i = 0;
+      const velocidade = 40;
+      const textoElemento = document.getElementById('textoDigitando');
+
+      function digitar() {
+        if (i < mensagem.length) {
+          textoElemento.innerHTML += mensagem.charAt(i)
+            .replace(/
+/g, '<br>');
+          i++;
+          setTimeout(digitar, velocidade);
+        }
+      }
+
+      digitar();
+    }
+
+    function mostrarMensagem() {
+      alert('Você é uma das melhores partes do meu dia 💖');
+    }
+
+    function criarCoracao() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(criarCoracao, 300);
+
+    document.getElementById('contador').innerHTML =
+      'Você conseguiu deixar meus dias mais bonitos 💖';
+
+    const fotos = [
+      'https://i.postimg.cc/XZLDSNSV/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg',
+      'https://i.postimg.cc/KKxsHkVh/eafff9cc68bf40148da8134c40b96b67.webp',
+      'https://i.postimg.cc/zL7PZDmP/fdfe2b7da89c42539dbd0e3769fc323d.webp',
+      'https://i.postimg.cc/XZLDSNSj/IMG-20260519-083900.jpg',
+      'https://i.postimg.cc/XZ4DzGPx/Screenshot-2026-05-19-22-43-39-851-com-dts-freefireth.jpg'
+    ];
+
+    let fotoAtual = 0;
+
+    setInterval(() => {
+      fotoAtual = (fotoAtual + 1) % fotos.length;
+      document.getElementById('fotoSlide').src = fotos[fotoAtual];
+    }, 3000);
+  </script></body>
+  </html>
