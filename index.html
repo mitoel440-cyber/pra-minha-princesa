@@ -188,7 +188,7 @@ button:hover {
         <div class="tampa"></div>
         <div class="corpo"></div>
         <div class="carta-preview">💌</div>
-        <button class="btn-envelope" onclick="abrirCarta()">Abrir 💖</button>
+        <button type="button" class="btn-envelope" id="abrirBtn">Abrir 💖</button>
       </div><h1>Uma coisinha pra Aurora 💌</h1>
   <p>Tem uma surpresa esperando a Aurora ✨</p>
 </div>
@@ -207,20 +207,6 @@ button:hover {
 </div>
 
   </div>  <script>
-    function abrirCarta() {
-      const envelope = document.querySelector('.envelope');
-      const tampa = document.querySelector('.tampa');
-
-      envelope.style.pointerEvents = 'none';
-      tampa.style.transform = 'rotateX(180deg)';
-
-      setTimeout(() => {
-        document.getElementById('inicio').classList.add('hidden');
-        document.getElementById('carta').classList.remove('hidden');
-        escreverTexto();
-      }, 900);
-    }
-
     const mensagem = `Aurora... ✨
 
 É estranho pensar que tão pouco tempo conseguiu significar tanto pra mim.
@@ -229,26 +215,38 @@ Você apareceu de um jeito simples, mas aos poucos foi deixando meus dias mais l
 
 Seu jeito, seu sorriso e até os pequenos detalhes em você conseguem ficar na minha cabeça o dia inteiro.
 
-E sinceramente? Eu gosto disso.
+Porque mesmo em pouco tempo, você conseguiu me fazer muito bem. 💖`;
 
-Porque mesmo em pouco tempo, você conseguiu me fazer sentir coisas que muita gente não consegue em anos.
+    function abrirCarta() {
+      const tampa = document.querySelector('.tampa');
+      tampa.style.transform = 'rotateX(180deg)';
 
-Você virou aquela pessoa que eu gosto de conversar, pensar e admirar.
-
-Só queria que você soubesse que sua presença me faz muito bem, Aurora. 💖`;
+      setTimeout(() => {
+        document.getElementById('inicio').style.display = 'none';
+        document.getElementById('carta').classList.remove('hidden');
+        escreverTexto();
+      }, 800);
+    }
 
     function escreverTexto() {
-      let i = 0;
-      const velocidade = 40;
       const textoElemento = document.getElementById('textoDigitando');
+      textoElemento.innerHTML = '';
+
+      let i = 0;
 
       function digitar() {
         if (i < mensagem.length) {
-          textoElemento.innerHTML += mensagem.charAt(i)
-            .replace(/
-/g, '<br>');
+          const letra = mensagem.charAt(i);
+
+          if (letra === '
+') {
+            textoElemento.innerHTML += '<br>';
+          } else {
+            textoElemento.innerHTML += letra;
+          }
+
           i++;
-          setTimeout(digitar, velocidade);
+          setTimeout(digitar, 35);
         }
       }
 
@@ -256,7 +254,7 @@ Só queria que você soubesse que sua presença me faz muito bem, Aurora. 💖`;
     }
 
     function mostrarMensagem() {
-      alert('Você é uma das melhores partes do meu dia 💖');
+      alert('Aurora, você é uma das melhores partes do meu dia 💖');
     }
 
     function criarCoracao() {
@@ -291,5 +289,7 @@ Só queria que você soubesse que sua presença me faz muito bem, Aurora. 💖`;
       fotoAtual = (fotoAtual + 1) % fotos.length;
       document.getElementById('fotoSlide').src = fotos[fotoAtual];
     }, 3000);
+
+    document.getElementById('abrirBtn').addEventListener('click', abrirCarta);
   </script></body>
 </html>
