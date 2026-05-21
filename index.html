@@ -131,6 +131,7 @@ button:hover {
 
 .tampa {
   transition: transform 1s ease;
+  pointer-events: none;
 
   position: absolute;
   width: 100%;
@@ -196,7 +197,10 @@ button:hover {
 
   </div>  <script>
     function abrirCarta() {
+      const envelope = document.querySelector('.envelope');
       const tampa = document.querySelector('.tampa');
+
+      envelope.style.pointerEvents = 'none';
       tampa.style.transform = 'rotateX(180deg)';
 
       setTimeout(() => {
@@ -270,4 +274,4 @@ button:hover {
       document.getElementById('fotoSlide').src = fotos[fotoAtual];
     }, 3000);
   </script></body>
-  </html>
+</html>
