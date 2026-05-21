@@ -13,6 +13,7 @@
   background: linear-gradient(135deg, #ff9ecf, #ffd6ea);
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,8 +239,7 @@ Porque mesmo em pouco tempo, você conseguiu me fazer muito bem. 💖`;
         if (i < mensagem.length) {
           const letra = mensagem.charAt(i);
 
-          if (letra === '
-') {
+          if (letra === '\n') {
             textoElemento.innerHTML += '<br>';
           } else {
             textoElemento.innerHTML += letra;
