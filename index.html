@@ -15,7 +15,7 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#ff9ecf,#ffd6ea);
+background:linear-gradient(135deg,#0b1020,#1a1f3c,#ff7ac6);
 min-height:100vh;
 overflow-x:hidden;
 overflow-y:auto;
@@ -29,12 +29,12 @@ color:white;
 .container{
 width:100%;
 max-width:420px;
-background:rgba(255,255,255,0.12);
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
 padding:25px;
 border-radius:25px;
 text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 position:relative;
 overflow:hidden;
 }
@@ -155,6 +155,8 @@ opacity:0;
 
 <div class="container">
 
+<!-- INICIO -->
+
 <div id="inicio">
 
 <div class="envelope">
@@ -188,7 +190,7 @@ Abrir 💖
 <img
 id="foto"
 class="foto"
-src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop"
+src="https://i.postimg.cc/VrxsyPC0/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg"
 >
 
 <div class="texto" id="texto"></div>
@@ -207,19 +209,21 @@ Continuar ✨
 
 <div id="pagina2" class="hidden">
 
-<h1>Mais uma coisa 💌</h1>
+<h1>🌌 Você é especial 🌌</h1>
 
 <img
 class="foto"
-src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop"
+src="https://i.postimg.cc/hzk4FRdG/eafff9cc68bf40148da8134c40b96b67.webp"
 >
 
 <div class="texto">
 
 Mesmo em pouco tempo, você conseguiu ocupar um espaço enorme nos meus pensamentos.
+
 <br><br>
 
 Tem algo em você que deixa tudo mais leve.
+
 <br><br>
 
 Seu jeito, sua energia e até os detalhes mais simples conseguem deixar meu dia melhor. 💖
@@ -236,25 +240,93 @@ Tem mais 👀
 
 <div id="pagina3" class="hidden">
 
-<h1>Pra você 🌌</h1>
+<h1>🌻 Aurora 🌻</h1>
 
 <img
 class="foto"
-src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"
+src="https://i.postimg.cc/S2BQ0bMs/fdfe2b7da89c42539dbd0e3769fc323d.webp"
 >
 
 <div class="texto">
 
-Aurora... talvez você ainda nem imagine,
-mas conseguiu se tornar alguém muito especial pra mim.
+Você tem uma luz muito bonita.
+
+Daquelas que conseguem aquecer até os dias mais difíceis.
+
 <br><br>
 
-Obrigado por existir e por conseguir deixar meus dias mais felizes só com sua presença ✨
+Às vezes eu me pego pensando em você do nada...
+lembrando das conversas, do seu jeito e de como você consegue deixar tudo mais bonito só existindo.
+
+<br><br>
+
+E sinceramente?
+Eu gosto muito disso ✨
+
+</div>
+
+<button onclick="irPagina4()">
+Última página 🌌
+</button>
+
+</div>
+
+<!-- PAGINA 4 -->
+
+<div id="pagina4" class="hidden">
+
+<h1>Última coisinha 💖</h1>
+
+<img
+class="foto"
+src="https://i.postimg.cc/7GFPvr2P/IMG-20260519-083900.jpg"
+>
+
+<div class="texto">
+
+Aurora... ✨
+
+Talvez você ainda nem tenha ideia do quanto conseguiu se tornar especial pra mim em tão pouco tempo.
+
+É estranho explicar, porque normalmente as pessoas levam muito tempo pra mexer comigo desse jeito... mas você conseguiu naturalmente.
+
+<br><br>
+
+Seu jeito, sua presença, sua energia, seu sorriso... tudo em você tem alguma coisa que prende minha atenção sem esforço nenhum.
+
+<br><br>
+
+Você apareceu e, aos poucos, foi deixando meus dias mais leves, mais felizes e muito mais bonitos.
+
+<br><br>
+
+Tem dias que eu me pego pensando em você do nada.
+Lembrando de alguma conversa, do seu jeito ou simplesmente imaginando você aqui comigo.
+
+<br><br>
+
+E o mais louco é perceber como alguém pode trazer paz só existindo.
+
+<br><br>
+
+Obrigado por aparecer na minha vida e por conseguir deixar tanta coisa melhor sem nem perceber.
+
+<br><br>
+
+Espero continuar conhecendo cada detalhe seu, cada sorriso, cada mania e cada momento.
+
+<br><br>
+
+Porque estar perto de você, mesmo que seja pouco, já faz um bem enorme pra mim. 💖
+
+<br><br>
+
+🌌 Eu te amo 🌌
 
 </div>
 
 <button onclick="mostrarMensagem()">
-Clique aqui 💖
+Fim 💖
 </button>
 
 </div>
@@ -355,32 +427,25 @@ window.scrollTo(0,0);
 
 }
 
-function mostrarMensagem(){
+function irPagina4(){
 
-alert("Aurora, você é uma das melhores partes do meu dia 💖");
+document.getElementById("pagina3").classList.add(
+"hidden"
+);
+
+document.getElementById("pagina4").classList.remove(
+"hidden"
+);
+
+window.scrollTo(0,0);
 
 }
 
-const fotos = [
+function mostrarMensagem(){
 
-"https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop",
+alert("Aurora, eu te amo 💖");
 
-"https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=80&w=1200&auto=format&fit=crop",
-
-"https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop"
-
-];
-
-let fotoAtual = 0;
-
-setInterval(function(){
-
-fotoAtual = (fotoAtual + 1) % fotos.length;
-
-document.getElementById("foto").src =
-fotos[fotoAtual];
-
-},3000);
+}
 
 function criarCoracao(){
 
@@ -406,6 +471,35 @@ heart.remove();
 }
 
 setInterval(criarCoracao,300);
+
+const fotos = [
+
+"https://i.postimg.cc/VrxsyPC0/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg",
+
+"https://i.postimg.cc/hzk4FRdG/eafff9cc68bf40148da8134c40b96b67.webp",
+
+"https://i.postimg.cc/S2BQ0bMs/fdfe2b7da89c42539dbd0e3769fc323d.webp",
+
+"https://i.postimg.cc/7GFPvr2P/IMG-20260519-083900.jpg",
+
+"https://i.postimg.cc/4Hpfs26d/Screenshot-2026-05-17-19-00-27-890-com-dts-freefireth.jpg",
+
+"https://i.postimg.cc/LYc4dF1P/Screenshot-2026-05-17-19-00-36-262-com-dts-freefireth.jpg",
+
+"https://i.postimg.cc/62k6sxvT/Screenshot-2026-05-19-22-43-39-851-com-dts-freefireth.jpg"
+
+];
+
+let fotoAtual = 0;
+
+setInterval(function(){
+
+fotoAtual = (fotoAtual + 1) % fotos.length;
+
+document.getElementById("foto").src =
+fotos[fotoAtual];
+
+},3000);
 
 </script>
 
