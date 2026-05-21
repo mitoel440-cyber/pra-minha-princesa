@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pra Minha Princesa 💖</title>
+  <title>Pra Aurora 💖</title>
   <style>
     * {
       margin: 0;
@@ -159,6 +159,15 @@ button:hover {
   z-index: 0;
 }
 
+.btn-envelope {
+  position: absolute;
+  bottom: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  margin-top: 0;
+}
+
 @keyframes flutuar {
   0% {
     transform: rotateX(0deg);
@@ -175,19 +184,21 @@ button:hover {
 </head>
 <body>  <div class="container">
     <div id="inicio">
-      <div class="envelope" onclick="abrirCarta()">
+      <div class="envelope" id="envelope">
         <div class="tampa"></div>
         <div class="corpo"></div>
         <div class="carta-preview">💌</div>
-      </div><h1>Uma coisinha pra você 💌</h1>
-  <p>Tem uma surpresa esperando sua princesa favorita...</p>
+        <button class="btn-envelope" onclick="abrirCarta()">Abrir 💖</button>
+      </div><h1>Uma coisinha pra Aurora 💌</h1>
+  <p>Tem uma surpresa esperando a Aurora ✨</p>
 </div>
 
 <div id="carta" class="hidden">
-  <h1>Pra Minha Princesa 💖</h1>
+  <h1>Pra Aurora 💖</h1>
 
   <img class="foto" id="fotoSlide" src="https://i.postimg.cc/XZLDSNSV/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg" alt="foto">
 
+  <div style="font-size: 1.3rem; margin-bottom: 10px;">🌌 Aurora ✨</div>
   <div class="texto" id="textoDigitando"></div>
 
   <div class="contador" id="contador"></div>
@@ -210,14 +221,21 @@ button:hover {
       }, 900);
     }
 
-    const mensagem = `Desde que você apareceu na minha vida,
- tudo ficou mais bonito, mais leve e mais especial.
- Seu sorriso consegue iluminar até os meus dias mais difíceis.
+    const mensagem = `Aurora... ✨
 
- Você é aquele tipo de pessoa que dá vontade de cuidar,
- abraçar e ter por perto o tempo todo.
+É estranho pensar que tão pouco tempo conseguiu significar tanto pra mim.
 
- Só queria que você soubesse que é muito importante pra mim. 💕`;
+Você apareceu de um jeito simples, mas aos poucos foi deixando meus dias mais leves, mais felizes e muito mais bonitos.
+
+Seu jeito, seu sorriso e até os pequenos detalhes em você conseguem ficar na minha cabeça o dia inteiro.
+
+E sinceramente? Eu gosto disso.
+
+Porque mesmo em pouco tempo, você conseguiu me fazer sentir coisas que muita gente não consegue em anos.
+
+Você virou aquela pessoa que eu gosto de conversar, pensar e admirar.
+
+Só queria que você soubesse que sua presença me faz muito bem, Aurora. 💖`;
 
     function escreverTexto() {
       let i = 0;
@@ -257,7 +275,7 @@ button:hover {
     setInterval(criarCoracao, 300);
 
     document.getElementById('contador').innerHTML =
-      'Você conseguiu deixar meus dias mais bonitos 💖';
+      'Aurora, você conseguiu deixar meus dias mais bonitos 💖';
 
     const fotos = [
       'https://i.postimg.cc/XZLDSNSV/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg',
