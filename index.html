@@ -1,301 +1,325 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pra Aurora 💖</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }body {
-  background: linear-gradient(135deg, #ff9ecf, #ffd6ea);
-  min-height: 100vh;
-  overflow-x: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  color: white;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pra Aurora 💖</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-.container {
-  max-width: 420px;
-  width: 100%;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  border-radius: 25px;
-  padding: 25px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  animation: aparecer 1s ease;
+body{
+background:linear-gradient(135deg,#ff8fc7,#ffcce6);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+color:white;
 }
 
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.container{
+width:100%;
+max-width:420px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+animation:aparecer 1s ease;
+position:relative;
+z-index:2;
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+@keyframes aparecer{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-.foto {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 20px;
-  margin: 15px 0;
-  border: 3px solid rgba(255,255,255,0.4);
+.hidden{
+display:none;
 }
 
-.texto {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-top: 15px;
+h1{
+margin-bottom:15px;
+font-size:2rem;
 }
 
-button {
-  margin-top: 25px;
-  background: white;
-  color: #ff4f9a;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
+p{
+line-height:1.7;
 }
 
-button:hover {
-  transform: scale(1.05);
+.envelope{
+position:relative;
+width:220px;
+height:150px;
+margin:20px auto;
 }
 
-.heart {
-  position: fixed;
-  top: -10px;
-  color: white;
-  animation: cair linear forwards;
-  font-size: 20px;
-  opacity: 0.8;
+.corpo{
+position:absolute;
+width:100%;
+height:100%;
+background:#ff5fa2;
+border-radius:12px;
+bottom:0;
 }
 
-@keyframes cair {
-  to {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
+.tampa{
+position:absolute;
+width:100%;
+height:100%;
+background:#ff89bb;
+clip-path:polygon(0 0,50% 55%,100% 0);
+transform-origin:top;
+transition:1s;
+z-index:3;
 }
 
-.hidden {
-  display: none;
+.carta{
+position:absolute;
+width:80%;
+height:80%;
+background:white;
+left:10%;
+top:10%;
+border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:2rem;
+z-index:1;
 }
 
-.contador {
-  margin-top: 20px;
-  font-size: 0.95rem;
-  opacity: 0.9;
+button{
+margin-top:20px;
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4f9a;
+font-size:1rem;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
-.envelope {
-  position: relative;
-  width: 220px;
-  height: 150px;
-  margin: 0 auto 25px;
-  cursor: pointer;
-  transition: transform 0.3s;
+button:hover{
+transform:scale(1.05);
 }
 
-.envelope:hover {
-  transform: scale(1.05);
+.foto{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:20px;
+margin:15px 0;
+border:3px solid rgba(255,255,255,0.3);
 }
 
-.corpo {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ff6fae;
-  border-radius: 12px;
-  bottom: 0;
-  z-index: 1;
+.texto{
+margin-top:15px;
+font-size:1rem;
+line-height:1.8;
+min-height:180px;
 }
 
-.tampa {
-  transition: transform 1s ease;
-  pointer-events: none;
-
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ff8fc0;
-  clip-path: polygon(0 0, 50% 55%, 100% 0);
-  transform-origin: top;
-  animation: flutuar 2s infinite ease-in-out;
-  z-index: 2;
+.contador{
+margin-top:15px;
+font-size:0.95rem;
+opacity:0.9;
 }
 
-.carta-preview {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  background: white;
-  left: 10%;
-  top: 10%;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: #ff4f9a;
-  z-index: 0;
+.heart{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:cair linear forwards;
+opacity:0.8;
+z-index:1;
 }
 
-.btn-envelope {
-  position: absolute;
-  bottom: -55px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  margin-top: 0;
+@keyframes cair{
+to{
+transform:translateY(110vh);
+opacity:0;
 }
-
-@keyframes flutuar {
-  0% {
-    transform: rotateX(0deg);
-  }
-  50% {
-    transform: rotateX(15deg);
-  }
-  100% {
-    transform: rotateX(0deg);
-  }
 }
-
-  </style>
+</style>
 </head>
-<body>  <div class="container">
-    <div id="inicio">
-      <div class="envelope" id="envelope">
-        <div class="tampa"></div>
-        <div class="corpo"></div>
-        <div class="carta-preview">💌</div>
-      </div><h1>Uma coisinha pra Aurora 💌</h1>
-  <p>Tem uma surpresa esperando a Aurora ✨</p>
-  <button type="button" id="abrirBtn">Abrir 💖</button>
+
+<body>
+
+<div class="container">
+
+<div id="inicio">
+
+<div class="envelope">
+<div class="tampa" id="tampa"></div>
+<div class="corpo"></div>
+<div class="carta">💌</div>
 </div>
 
-<div id="carta" class="hidden">
-  <h1>Pra Aurora 💖</h1>
+<h1>Uma coisinha pra Aurora 💖</h1>
 
-  <img class="foto" id="fotoSlide" src="https://i.postimg.cc/XZLDSNSV/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg" alt="foto">
+<p>
+Tem uma surpresa esperando você ✨
+</p>
 
-  <div style="font-size: 1.3rem; margin-bottom: 10px;">🌌 Aurora ✨</div>
-  <div class="texto" id="textoDigitando"></div>
+<button id="abrirBtn">
+Abrir 💖
+</button>
 
-  <div class="contador" id="contador"></div>
-
-  <button onclick="mostrarMensagem()">Clique aqui ✨</button>
 </div>
 
-  </div>  <script>
-    const mensagem = `Aurora... ✨
+<div id="conteudo" class="hidden">
+
+<h1>Aurora ✨</h1>
+
+<img
+id="foto"
+class="foto"
+src="https://i.postimg.cc/XZLDSNSV/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg"
+>
+
+<div class="texto" id="texto"></div>
+
+<div class="contador">
+Você conseguiu deixar meus dias mais bonitos 💖
+</div>
+
+<button onclick="alert('Você é muito especial pra mim 💖')">
+Clique aqui ✨
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const abrirBtn = document.getElementById("abrirBtn");
+const tampa = document.getElementById("tampa");
+
+abrirBtn.addEventListener("click", ()=>{
+
+tampa.style.transform = "rotateX(180deg)";
+
+setTimeout(()=>{
+
+document.getElementById("inicio").classList.add("hidden");
+
+document.getElementById("conteudo").classList.remove("hidden");
+
+digitarTexto();
+
+},800);
+
+});
+
+const mensagem = `
+Aurora... ✨
 
 É estranho pensar que tão pouco tempo conseguiu significar tanto pra mim.
 
 Você apareceu de um jeito simples, mas aos poucos foi deixando meus dias mais leves, mais felizes e muito mais bonitos.
 
-Seu jeito, seu sorriso e até os pequenos detalhes em você conseguem ficar na minha cabeça o dia inteiro.
+Seu sorriso consegue ficar na minha cabeça o dia inteiro.
 
-Porque mesmo em pouco tempo, você conseguiu me fazer muito bem. 💖`;
+E sinceramente? Eu gosto disso.
 
-    function abrirCarta() {
-      const tampa = document.querySelector('.tampa');
-      tampa.style.transform = 'rotateX(180deg)';
+Porque mesmo em pouco tempo, você conseguiu me fazer muito bem. 💖
+`;
 
-      setTimeout(() => {
-        document.getElementById('inicio').style.display = 'none';
-        document.getElementById('carta').classList.remove('hidden');
-        escreverTexto();
-      }, 800);
-    }
+function digitarTexto(){
 
-    function escreverTexto() {
-      const textoElemento = document.getElementById('textoDigitando');
-      textoElemento.innerHTML = '';
+const texto = document.getElementById("texto");
 
-      let i = 0;
+let i = 0;
 
-      function digitar() {
-        if (i < mensagem.length) {
-          const letra = mensagem.charAt(i);
+function escrever(){
 
-          if (letra === '
-') {
-            textoElemento.innerHTML += '<br>';
-          } else {
-            textoElemento.innerHTML += letra;
-          }
+if(i < mensagem.length){
 
-          i++;
-          setTimeout(digitar, 35);
-        }
-      }
+if(mensagem.charAt(i) == "\n"){
+texto.innerHTML += "<br>";
+}else{
+texto.innerHTML += mensagem.charAt(i);
+}
 
-      digitar();
-    }
+i++;
 
-    function mostrarMensagem() {
-      alert('Aurora, você é uma das melhores partes do meu dia 💖');
-    }
+setTimeout(escrever,35);
 
-    function criarCoracao() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.innerHTML = '❤';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      document.body.appendChild(heart);
+}
 
-      setTimeout(() => {
-        heart.remove();
-      }, 6000);
-    }
+}
 
-    setInterval(criarCoracao, 300);
+escrever();
 
-    document.getElementById('contador').innerHTML =
-      'Aurora, você conseguiu deixar meus dias mais bonitos 💖';
+}
 
-    const fotos = [
-      'https://i.postimg.cc/XZLDSNSV/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg',
-      'https://i.postimg.cc/KKxsHkVh/eafff9cc68bf40148da8134c40b96b67.webp',
-      'https://i.postimg.cc/zL7PZDmP/fdfe2b7da89c42539dbd0e3769fc323d.webp',
-      'https://i.postimg.cc/XZLDSNSj/IMG-20260519-083900.jpg',
-      'https://i.postimg.cc/XZ4DzGPx/Screenshot-2026-05-19-22-43-39-851-com-dts-freefireth.jpg'
-    ];
+const fotos = [
 
-    let fotoAtual = 0;
+"https://i.postimg.cc/XZLDSNSV/23d1fdd7e1b342ccbc19967aa7c2f55d.jpg",
 
-    setInterval(() => {
-      fotoAtual = (fotoAtual + 1) % fotos.length;
-      document.getElementById('fotoSlide').src = fotos[fotoAtual];
-    }, 3000);
+"https://i.postimg.cc/KKxsHkVh/eafff9cc68bf40148da8134c40b96b67.webp",
 
-    window.onload = function () {
-      const botao = document.getElementById('abrirBtn');
+"https://i.postimg.cc/zL7PZDmP/fdfe2b7da89c42539dbd0e3769fc323d.webp",
 
-      if (botao) {
-        botao.addEventListener('click', abrirCarta);
-      }
-    };
-  </script></body>
+"https://i.postimg.cc/XZLDSNSj/IMG-20260519-083900.jpg",
+
+"https://i.postimg.cc/XZ4DzGPx/Screenshot-2026-05-19-22-43-39-851-com-dts-freefireth.jpg"
+
+];
+
+let fotoAtual = 0;
+
+setInterval(()=>{
+
+fotoAtual = (fotoAtual + 1) % fotos.length;
+
+document.getElementById("foto").src = fotos[fotoAtual];
+
+},3000);
+
+function criarCoracao(){
+
+const heart = document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = "❤";
+
+heart.style.left = Math.random()*100 + "vw";
+
+heart.style.animationDuration =
+(Math.random()*3 + 3) + "s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(criarCoracao,300);
+
+</script>
+
+</body>
 </html>
