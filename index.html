@@ -188,9 +188,9 @@ button:hover {
         <div class="tampa"></div>
         <div class="corpo"></div>
         <div class="carta-preview">💌</div>
-        <button type="button" class="btn-envelope" id="abrirBtn">Abrir 💖</button>
       </div><h1>Uma coisinha pra Aurora 💌</h1>
   <p>Tem uma surpresa esperando a Aurora ✨</p>
+  <button type="button" id="abrirBtn">Abrir 💖</button>
 </div>
 
 <div id="carta" class="hidden">
@@ -290,6 +290,12 @@ Porque mesmo em pouco tempo, você conseguiu me fazer muito bem. 💖`;
       document.getElementById('fotoSlide').src = fotos[fotoAtual];
     }, 3000);
 
-    document.getElementById('abrirBtn').addEventListener('click', abrirCarta);
+    window.onload = function () {
+      const botao = document.getElementById('abrirBtn');
+
+      if (botao) {
+        botao.addEventListener('click', abrirCarta);
+      }
+    };
   </script></body>
 </html>
